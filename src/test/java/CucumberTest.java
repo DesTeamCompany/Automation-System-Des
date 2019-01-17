@@ -9,6 +9,7 @@ import ru.sbtqa.tag.pagefactory.PageFactory;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true,
+        junit = {"--step-notifications"},
         plugin = "pretty",
         features = "src/test/java/features",
         glue = {"javacode/stepdefs",
