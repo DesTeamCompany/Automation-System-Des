@@ -1,7 +1,6 @@
 package javacode.pages;
 
 
-import org.junit.After;
 import ru.sbtqa.tag.pagefactory.Page;
 import ru.sbtqa.tag.pagefactory.PageFactory;
 
@@ -17,17 +16,18 @@ public class BasePage extends Page {
     static {
         urls.put("страница с логином", "webdriver.starting.url");
         urls.put("стартовая страница", "startingpage");
+        urls.put("Новости", "newspage");
+        urls.put("Друзья", "friendspage");
+        urls.put("Группы", "groupspage");
+        urls.put("Сообщения", "messegespage");
+        urls.put("Видео", "videospage");
     }
 
     public BasePage() {
-      PageFactory.initElements(PageFactory.getWebDriver(), this);
+        PageFactory.initElements(PageFactory.getWebDriver(), this);
     }
 
     public static Map<String, String> getSystemUrl() {
         return urls;
-    }
-
-    @After
-    private void exit(){
     }
 }

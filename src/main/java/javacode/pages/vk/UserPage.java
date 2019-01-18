@@ -1,56 +1,47 @@
 package javacode.pages.vk;
 
-import cucumber.api.java.ru.Тогда;
 import javacode.pages.BasePage;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import ru.sbtqa.tag.pagefactory.Page;
+import ru.sbtqa.tag.pagefactory.annotations.ElementTitle;
 import ru.sbtqa.tag.pagefactory.annotations.PageEntry;
-import ru.sbtqa.tag.qautils.properties.Props;
 
 /**
  * Created by Юра on 16.01.2019.
  * Updated by Витя on 18.01.2019
  */
-@PageEntry(title = "стартовая страница")
+@PageEntry(title = "Моя страница")
 public class UserPage extends BasePage {
+
+    @ElementTitle("Моя страница")
     @FindBy(id = "l_pr")
-    private WebElement MainPage;
+    public WebElement MainPage;
 
+    @ElementTitle("Новости")
     @FindBy(id = "l_nwsf")
-    private WebElement News;
+    public WebElement News;
 
+    @ElementTitle("Сообщения")
     @FindBy(id = "l_msg")
-    private WebElement Messeges;
+    public WebElement Messeges;
 
+    @ElementTitle("Друзья")
     @FindBy(id = "l_fr")
-    private WebElement Friends;
+    public WebElement Friends;
 
+    @ElementTitle("Группы")
     @FindBy(id = "l_gr")
-    private WebElement Groups;
+    public WebElement Groups;
 
+    @ElementTitle("Фотографии")
     @FindBy(id = "l_ph")
-    private WebElement Photos;
+    public WebElement Photos;
 
+    @ElementTitle("Музыка")
     @FindBy(id = "l_aud")
-    private WebElement Music;
+    public WebElement Music;
 
+    @ElementTitle("Видео")
     @FindBy(id = "l_vid")
-    private WebElement Videos;
-
-    @FindBy(id = "l_ap")
-    private WebElement Applic;
-
-    @Тогда("^нажми на ссылки$")
-    public void links() {
-        MainPage.click();
-        Messeges.click();
-        Friends.click();
-        Groups.click();
-        Photos.click();
-        Music.click();
-        Videos.click();
-        Applic.click();
-        News.click();
-    }
+    public WebElement Videos;
 }
