@@ -14,11 +14,12 @@ import ru.sbtqa.tag.pagefactory.PageFactory;
         features = "src/test/java/features",
         glue = {"javacode/stepdefs",
                 "javacode/utils",
-                "javacode/pages",},
+                "javacode/pages",
+                "ru.sbtqa.tag.stepdefs.ru"},
         tags = {"@test"}
 )
 public class CucumberTest {
-    public void killAll(){
+    public void killAll() {
         PageFactory.dispose();
     }
 }

@@ -2,22 +2,21 @@ package javacode.stepdefs;
 
 
 import cucumber.api.java.ru.Тогда;
-import javacode.pages.BasePage;
 
 import ru.sbtqa.tag.pagefactory.PageFactory;
-import ru.sbtqa.tag.qautils.properties.Props;
+import ru.sbtqa.tag.pagefactory.exceptions.PageException;
 
 /**
  * Created by Юра on 09.01.2019.
  */
 public class CommonStepDefs {
 
-    @Тогда("^открыта страница \"([^\"]*)\"$")
-    public void pageIsOpen(String title) throws Throwable {
-        if (BasePage.getSystemUrl().containsKey(title)) {
-            PageFactory.getWebDriver().get(Props.get(BasePage.getSystemUrl().get(title)));
+    @Тогда("^нажать на кнопку \"([^\"]*)\"$")
+    public void buttonClick(String name) throws InterruptedException {
+        try {
+            PageFactory.getInstance().getCurrentPage().clickElementByTitle(name);
+        } catch (PageException e) {
+            e.printStackTrace();
         }
-        PageFactory.getInstance().getPage(title);
     }
-
 }
