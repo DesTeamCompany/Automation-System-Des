@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import ru.sbtqa.tag.pagefactory.Page;
 import ru.sbtqa.tag.pagefactory.PageFactory;
+import ru.sbtqa.tag.pagefactory.annotations.ActionTitle;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
 
 import java.util.List;
@@ -23,21 +24,5 @@ public class CommonStepDefs {
         } catch (PageException e) {
             e.printStackTrace();
         }
-    }
-    @Тогда ("^список онлайн$")
-        public void Write(){
-        try {
-            List<WebElement> list = PageFactory.getWebDriver().findElements(By.xpath("//div[contains(@class,'friends_field friends_field_title')]"));
-            list.forEach(x-> System.out.println(x.getText()));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Тогда ("^список в новостях$")
-    public void WriteNews()
-    {
-        List<WebElement> list = PageFactory.getWebDriver().findElements(By.xpath("//h5[contains(@class,'post_author')]"));
-        list.forEach(x -> System.out.println(x.getText()));
     }
 }
