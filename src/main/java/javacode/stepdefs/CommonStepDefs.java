@@ -5,6 +5,7 @@ import cucumber.api.java.ru.Тогда;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import ru.sbtqa.tag.pagefactory.Page;
 import ru.sbtqa.tag.pagefactory.PageFactory;
 import ru.sbtqa.tag.pagefactory.exceptions.PageException;
 
@@ -31,5 +32,12 @@ public class CommonStepDefs {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    @Тогда ("^список в новостях$")
+    public void WriteNews()
+    {
+        List<WebElement> list = PageFactory.getWebDriver().findElements(By.xpath("//h5[contains(@class,'post_author')]"));
+        list.forEach(x -> System.out.println(x.getText()));
     }
 }
