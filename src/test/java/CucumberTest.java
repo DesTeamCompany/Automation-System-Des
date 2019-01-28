@@ -16,7 +16,7 @@ import ru.sbtqa.tag.pagefactory.PageFactory;
                 "javacode/utils",
                 "javacode/pages",
                 "ru.sbtqa.tag.stepdefs.ru"},
-        tags = {"@test"}
+        tags = {"@mytest"}
 )
 public class CucumberTest {
     public void killAll() {
