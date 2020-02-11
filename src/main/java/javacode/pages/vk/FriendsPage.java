@@ -1,6 +1,12 @@
 package javacode.pages.vk;
 
+import com.vk.api.sdk.client.VkApiClient;
+import com.vk.api.sdk.client.actors.UserActor;
+import com.vk.api.sdk.objects.UserAuthResponse;
+import com.vk.api.sdk.objects.users.User;
+import javacode.utils.ApiVK;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.sbtqa.tag.pagefactory.PageFactory;
