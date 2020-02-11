@@ -18,7 +18,7 @@ public class Props {
 
     static {
         try {
-            fileInputStream = new FileInputStream("src/main/resources/config/application.properties");
+            fileInputStream = new FileInputStream("D:\\javaProject\\Automation-System-Des\\src\\test\\resources\\config\\application.properties");
             PROPERTIES = new Properties();
             PROPERTIES.load(fileInputStream);
         } catch (IOException e) {
@@ -33,7 +33,7 @@ public class Props {
         }
     }
 
-    public static String getTestProperty(String key) {
+    public static String getProperty(String key) {
         return PROPERTIES.getProperty(key);
     }
 }
